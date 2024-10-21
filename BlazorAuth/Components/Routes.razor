@@ -1,6 +1,16 @@
-﻿<Router AppAssembly="typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.DefaultLayout)" />
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
-    </Found>
-</Router>
+﻿<CascadingAuthenticationState>
+    <Router AppAssembly="typeof(App).Assembly">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(DefaultLayout)">
+                <NotAuthorized>
+                    <Logout />
+                </NotAuthorized>
+                <Authorizing>
+                </Authorizing>
+            </AuthorizeRouteView>
+        </Found>
+        <NotFound>
+            <Error />
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
