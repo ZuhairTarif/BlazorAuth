@@ -1,0 +1,10 @@
+﻿@inherits UserContext
+@inject NavigationManager NavigationManager
+
+@code
+{
+    protected override async void OnInitialized()
+    {
+        await Logout();
+    }
+}
