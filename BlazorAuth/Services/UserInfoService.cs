@@ -22,7 +22,7 @@ namespace BlazorAuth.Services
             });
         }
 
-        public UserInfo GetByUserName(string userName)
+        public UserInfo? GetByUserName(string userName)
         {
             return _users.FirstOrDefault(x => x.UserName == userName);
         }
