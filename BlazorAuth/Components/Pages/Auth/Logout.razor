@@ -6,27 +6,13 @@
             <b>@User.UserName</b> | <a @onclick="OnClickLogout">Logout</a>
         </div>
     </Authorized>
-    <NotAuthorized>
-        <div>
-            <a @onclick="Login">Login</a>
-        </div>
-    </NotAuthorized>
 </AuthorizeView>
 
-
 @code {
-    void Login()
-
-    {
-
-        NavTo("/login");
-
-    }
 
     async Task OnClickLogout()
 
     {
-
         await Logout();
 
         NavTo("/login");
