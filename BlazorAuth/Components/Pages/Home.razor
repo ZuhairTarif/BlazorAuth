@@ -1,4 +1,8 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Authorization
+@inherits UserContext
+@attribute [Authorize]
+@layout MainLayout
 
 <PageTitle>Home</PageTitle>
 
