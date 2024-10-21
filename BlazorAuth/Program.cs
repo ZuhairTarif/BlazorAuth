@@ -1,18 +1,36 @@
+using BlazorAuth.AppSettings;
 using BlazorAuth.Components;
+using BlazorAuth.Models;
+using BlazorAuth.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-var app = builder.Build();
+// Create a list of users to inject into UserInfoService
+var users = new List<UserInfo>();
 
-// Configure the HTTP request pipeline.
+builder.Services.AddSingleton(users); // Register the list as a singleton
+
+builder.Services.AddAuthentication()
+    .AddScheme<AuthenticationSchemeOptions, CustomAuthHandler>("CustomAuth", null);
+builder.Services.AddCascadingAuthenticationState();
+builder.Services.AddAuthenticationCore();
+builder.Services.AddAuthorization();
+
+builder.Services.AddServerSideBlazor();
+builder.Services.AddScoped<ProtectedLocalStorage>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
+builder.Services.AddTransient<UserInfoService>();
+
+var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
