@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAuth", "BlazorAuth\BlazorAuth.csproj", "{394826F2-12F1-4267-9E50-177AA0BF5B90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportViewer", "ReportViewer\ReportViewer.csproj", "{CD8B1320-C708-4056-B40D-AED7289B039A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{394826F2-12F1-4267-9E50-177AA0BF5B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{394826F2-12F1-4267-9E50-177AA0BF5B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{394826F2-12F1-4267-9E50-177AA0BF5B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD8B1320-C708-4056-B40D-AED7289B039A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD8B1320-C708-4056-B40D-AED7289B039A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD8B1320-C708-4056-B40D-AED7289B039A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD8B1320-C708-4056-B40D-AED7289B039A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
